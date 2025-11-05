@@ -1,0 +1,154 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: "Noto Sans JP", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  color: #1f2933;
+}
+
+body {
+  background-color: #f8fafc;
+}
+
+.app-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.map-panel {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #d9e2ec;
+  background-color: #ffffff;
+}
+
+.controls {
+  padding: 12px 16px;
+  border-bottom: 1px solid #d9e2ec;
+  background-color: #f0f4f8;
+}
+
+.controls form {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.controls input[type="text"] {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #9fb3c8;
+  border-radius: 4px;
+}
+
+.controls button {
+  padding: 8px 12px;
+  border: none;
+  background-color: #2563eb;
+  color: #ffffff;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.controls button:hover {
+  background-color: #1d4ed8;
+}
+
+.controls button:disabled {
+  background-color: #94a3b8;
+  cursor: not-allowed;
+}
+
+.controls .hint {
+  margin: 6px 0 10px;
+  font-size: 0.85rem;
+  color: #52606d;
+}
+
+.export-buttons {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+#status {
+  font-size: 0.85rem;
+  color: #334e68;
+  min-height: 1.2em;
+}
+
+#status.info {
+  color: #334e68;
+}
+
+#status.success {
+  color: #047857;
+}
+
+#status.error {
+  color: #b91c1c;
+}
+
+#status.loading {
+  color: #7c3aed;
+}
+
+#map {
+  flex: 1;
+  min-height: 0;
+}
+
+.table-panel {
+  flex: 1;
+  padding: 16px;
+  overflow: auto;
+  background-color: #ffffff;
+}
+
+.table-panel h1 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 1.4rem;
+  color: #1f2933;
+}
+
+#results-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#results-table th,
+#results-table td {
+  border-bottom: 1px solid #d9e2ec;
+  padding: 8px 6px;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+#results-table tbody tr:nth-child(odd) {
+  background-color: #f8fafc;
+}
+
+.arrow-icon-wrapper {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.arrow-icon {
+  font-size: 18px;
+  color: #c0392b;
+  transform-origin: center center;
+}
+
+.leaflet-container {
+  font: inherit;
+}

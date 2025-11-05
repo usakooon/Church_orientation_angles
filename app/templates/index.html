@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>教会の向きビューワ</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha512-mQC2H0bM8Gs4V3hokW2N1DbStO2Qd6hw2yYB9H9n1tFoZT3zh0+BTtPlqvGjNFH6G+jD/adJziYBGg=="
+      crossorigin=""
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.css"
+      integrity="sha512-2xskS8MaqkOawx2UY8ailqXF/w3vGN9VOGBev5nYeD1yfknhk+aoCA8DmF5asJ5AZt0pOEtpJR/YWZLxE+nobw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/static/css/styles.css" />
+  </head>
+  <body>
+    <div class="app-container">
+      <div class="map-panel">
+        <div class="controls">
+          <form id="search-form">
+            <input
+              type="text"
+              id="city-input"
+              placeholder="都市名で検索 (例: Milano)"
+              aria-label="都市名"
+            />
+            <button type="submit">都市検索</button>
+            <button type="button" id="fetch-bbox">現在の表示範囲で検索</button>
+          </form>
+          <p class="hint">矩形描画ツールを使って任意のエリアを選択できます。</p>
+          <div class="export-buttons">
+            <button type="button" id="export-csv">CSVエクスポート</button>
+            <button type="button" id="export-geojson">GeoJSONエクスポート</button>
+          </div>
+          <div id="status" role="status"></div>
+        </div>
+        <div id="map" aria-label="教会マップ"></div>
+      </div>
+      <div class="table-panel">
+        <h1>教会の向き一覧</h1>
+        <table id="results-table">
+          <thead>
+            <tr>
+              <th>名称</th>
+              <th>緯度</th>
+              <th>経度</th>
+              <th>方位角 (°)</th>
+              <th>東西偏差 (°)</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha512-vAIYFZ6PvxI6Bfq5lHppZArYrusS4x+h0/pk3jfbQ3VIAtF+wNCz7r+G2kZZgwyXR0YJIUKGwEuITTwSb9VInA=="
+      crossorigin=""
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.js"
+      integrity="sha512-1JS3BM4tiTnS9KuX3sI5Yucs5cjox96D65gis6pZeRAEIJ5zsxFrqxbPjzvY4xXHzkwmo7aX6ixkmKuuNHYsYg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="/static/js/main.js"></script>
+  </body>
+</html>
