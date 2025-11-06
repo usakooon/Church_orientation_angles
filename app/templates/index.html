@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Church Orientation Explorer</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha512-mQC2H0bM8Gs4V3hokW2N1DbStO2Qd6hw2yYB9H9n1tFoZT3zh0+BTtPlqvGjNFH6G+jD/adJziYBGg=="
+      crossorigin=""
+    />
+    <link rel="stylesheet" href="/static/css/styles.css" />
+  </head>
+  <body>
+    <div class="app-container">
+      <div class="map-panel">
+        <div class="controls">
+          <div class="button-row">
+            <button type="button" id="search-city-btn">Search by city</button>
+            <button type="button" id="search-bbox-btn">
+              Search by current view
+            </button>
+          </div>
+          <div class="export-buttons">
+            <button type="button" id="export-csv-btn">Export CSV</button>
+            <button type="button" id="export-geojson-btn">Export GeoJSON</button>
+          </div>
+          <div id="status" role="status"></div>
+        </div>
+        <div id="map" aria-label="Church map"></div>
+      </div>
+      <div class="table-panel">
+        <h1>Orientation summary</h1>
+        <table id="results-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Lat</th>
+              <th>Lon</th>
+              <th>Orientation (°)</th>
+              <th>Deviation (°)</th>
+              <th>Signed dev (°)</th>
+              <th>Aspect ratio</th>
+              <th>Confidence</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha512-vAIYFZ6PvxI6Bfq5lHppZArYrusS4x+h0/pk3jfbQ3VIAtF+wNCz7r+G2kZZgwyXR0YJIUKGwEuITTwSb9VInA=="
+      crossorigin=""
+    ></script>
+    <script src="/static/js/main.js"></script>
+  </body>
+</html>
