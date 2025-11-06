@@ -1,0 +1,8 @@
+fastapi
+uvicorn[standard]
+httpx
+geopandas
+shapely
+osmnx
+pyproj
+jinja2
